@@ -201,20 +201,6 @@ contract AragonPayroll is PayrollInterface {
         return minimumDays;
     }
 
-    function CanEmployeeExecutePaydayInDay(Employee employee, uint day) private constant returns (bool){
-        require(employee.lastPayment >= now);
-        if (day == 0 &&
-                (Calendar.getMonth(employee.lastPayment) != Calendar.getMonth(now) &&
-                Calendar.getYear(employee.lastPayment) == Calendar.getYear(now) ||
-                Calendar.getYear(employee.lastPayment) != Calendar.getYear(now)
-                )
-            )
-            return true;
-        if (Calendar.distanceOnDays(employee.lastPayment, now) == day)
-            return true;
-        return false;
-    }
-
     function payday() public {
         uint employee_id = employees_id[msg.sender];
         uint lastPayment = employees[employee_id].lastPayment;
