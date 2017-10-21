@@ -1,4 +1,13 @@
-# aragon_challenge
+# Aragon Challenge
+Truffle testing is very slow on a go client but all return OK. On a testrpc client, 3th test (shoudn't add an other employe...) fails because required() function returns an invalid op code (just ingnore it).
+
+A valid command to run testrpc is:
+
+```$ testrpc --accounts 1 network-id 15 --unlock 0 --unlock 1 --account="0xac12fe17ec058f5028dd369a3fb0df657d5ed4e1b5faff19d78ea9c8c019fdd8,10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" --account="0x7e5606ea558aff0140ffef1fb817d1858a0daf5168c15fb1f371e1e378d1c2b2,10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"```
+
+Where public keys are:
+        (0) 0x386f42f3d7eae2adc2cb7bba87ef1260d35bea4f
+        (1) 0x3b1dcdd52d595aa43b7df2ebf30b78d263da32a8
 
 Contract: AragonPayroll
 
